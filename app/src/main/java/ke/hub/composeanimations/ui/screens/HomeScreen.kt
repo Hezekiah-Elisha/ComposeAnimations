@@ -28,6 +28,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
@@ -72,10 +73,8 @@ fun AnimateButton(modifier: Modifier = Modifier) {
         Box(
             modifier =
                 Modifier
-//                            .size(100.dp)
                     .fillMaxWidth()
                     .height(100.dp)
-//                            .background(MaterialTheme.colorScheme.error)
                     .border(
                         1.dp,
                         MaterialTheme.colorScheme.onBackground,
@@ -114,6 +113,7 @@ fun SizeAndRotateAnimation(modifier: Modifier = Modifier) {
                 .graphicsLayer(scaleX = animatable.value, scaleY = animatable.value)
                 .rotate(rotation)
                 .background(MaterialTheme.colorScheme.primary)
+                .clip(RoundedCornerShape(16.dp))
                 .clickable { isBig = !isBig },
     )
 }
