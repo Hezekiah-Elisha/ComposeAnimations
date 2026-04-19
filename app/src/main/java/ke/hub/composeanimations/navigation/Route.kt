@@ -8,4 +8,7 @@ sealed interface Route : NavKey {
 //    @Serializable
     @Serializable
     data object Home : Route
+
+    @Serializable
+    data object Dial : NavKey
 }
